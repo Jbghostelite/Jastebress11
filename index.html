@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHOST HOSTING | JASTEB RESS MURNI</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
+        :root {
+            --primary: #6a3093;
+            --secondary: #a044ff;
+            --dark: #1a1a2e;
+            --light: #f1f1f1;
+            --accent: #00ff9d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(106, 48, 147, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(160, 68, 255, 0.2) 0%, transparent 50%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(160, 68, 255, 0.3);
+        }
+        
+        .subtitle {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .divider {
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--secondary), transparent);
+            margin: 1.5rem 0;
+            border: none;
+        }
+        
+        .price-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .price-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .price-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(160, 68, 255, 0.2);
+            border-color: var(--secondary);
+        }
+        
+        .price-amount {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .price-jasteb {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .order-form {
+            margin-top: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+        
+        .section-title {
+            color: var(--accent);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 2px;
+            background: var(--secondary);
+        }
+        
+        .payment-method {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .payment-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .payment-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .payment-icon {
+            margin-right: 0.8rem;
+            color: var(--accent);
+        }
+        
+        .note {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+            line-height: 1.5;
+        }
+        
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .warning {
+            color: #ff5555;
+            font-weight: 600;
+        }
+        
+        .telegram-info {
+            background: rgba(0, 136, 204, 0.1);
+            border-left: 3px solid #0088cc;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        @media (max-width: 600px) {
+            .price-list {
+                grid-template-columns: 1fr;
+            }
+            
+            body {
+                padding: 1rem;
+            }
+            
+            .container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GHOST HOSTING</h1>
+            <p class="subtitle">JASTEB RESS MURNI</p>
+        </header>
+        
+        <div class="price-list">
+            <div class="price-item">
+                <div class="price-amount">3K</div>
+                <div class="price-jasteb">100 JASTEB</div>
+            </div>
+            <div class="price-item">
+                <div class="price-amount">5K</div>
+                <div class="price-jasteb">130 JASTEB</div>
+            </div>
+            <div class="price-item">
+                <div class="price-amount">7K</div>
+                <div class="price-jasteb">150 JASTEB</div>
+            </div>
+            <div class="price-item">
+                <div class="price-amount">10K</div>
+                <div class="price-jasteb">200 JASTEB</div>
+            </div>
+            <div class="price-item">
+                <div class="price-amount">13K</div>
+                <div class="price-jasteb">230 JASTEB</div>
+            </div>
+            <div class="price-item">
+                <div class="price-amount">15K</div>
+                <div class="price-jasteb">250 JASTEB</div>
+            </div>
+            <div class="price-item">
+                <div class="price-amount">17K</div>
+                <div class="price-jasteb">330 JASTEB</div>
+            </div>
+            <div class="price-item">
+                <div class="price-amount">20K</div>
+                <div class="price-jasteb">350 JASTEB</div>
+            </div>
+        </div>
+        
+        <p class="note"><span class="highlight">SEMAKIN BANYAK ORDER KEMUNGKINAN STOK AKUN GG</span></p>
+        
+        <hr class="divider">
+        
+        <div class="order-form">
+            <h3 class="section-title">🍃 DATA PESANAN 🍃</h3>
+            
+            <div class="form-group">
+                <label for="email">📧 EMAIL:</label>
+                <input type="email" id="email" placeholder="Masukkan email Anda">
+            </div>
+            
+            <div class="form-group">
+                <label for="price">🏷 HARGA JASTEB:</label>
+                <select id="price">
+                    <option value="3k">3K : 100 JASTEB</option>
+                    <option value="5k">5K : 130 JASTEB</option>
+                    <option value="7k">7K : 150 JASTEB</option>
+                    <option value="10k">10K : 200 JASTEB</option>
+                    <option value="13k">13K : 230 JASTEB</option>
+                    <option value="15k">15K : 250 JASTEB</option>
+                    <option value="17k">17K : 330 JASTEB</option>
+                    <option value="20k">20K : 350 JASTEB</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="wa">📥 NOMOR WA:</label>
+                <input type="text" id="wa" placeholder="Contoh: 081234567890">
+            </div>
+            
+            <div class="telegram-info">
+                <div class="form-group">
+                    <label for="telegram">🔗 TELEGRAM TOKEN (untuk auto res):</7723295042:AAFQvcwGtlrHUPMO_ComBoounXfDKslzKeQ>
+                    <input type="text" id="telegram" placeholder="7723295042:AAFQvcwGtlrHUPMO_ComBoounXfDKslzKeQ">
+                </div>
+                
+                <div class="form-group">
+                    <label for="telegram-id">🆔 TELEGRAM ID:</l7515215800l>
+                    <input type="text" id="telegram-id" placeholder="7515215800">
+                </div>
+            </div>
+        </div>
+        
+        <hr class="divider">
+        
+        <h3 class="section-title">METODE PEMBAYARAN 💰</h3>
+        
+        <div class="payment-method">
+            <div class="payment-item">
+                <span class="payment-icon">💳</span>
+                <span>DANA: 081958539988</span>
+            </div>
+            <div class="payment-item">
+                <span class="payment-icon">📱</span>
+                <span>QRIS: (akan dikirim via WA setelah order)</span>
+            </div>
+        </div>
+        
+        <p class="note"><span class="highlight">JIKA SUDAH TF JASTEB PASTI MASUK</span><br>
+        <span class="warning">JIKA BELUM TF JANGAN BERHARAP JASTEB MASUK - APA LAGI MENUNGGU DIA KEMBALI 🥀🥀</span></p>
+        
+        <p class="note">JIKA SUDAH MELAKUKAN SEMUA DENGAN BENAR TUNGGU PROSES SELANJUTNYA<br>
+        <span class="highlight">JASTEB AKAN MASUK ✅</span></p>
+    </div>
+</body>
+</html>
+```
